@@ -13,6 +13,8 @@ void main() {
   )));
 }
 
+void onPressed() {}
+
 class DiceApp extends StatefulWidget {
   @override
   _DiceAppState createState() => _DiceAppState();
@@ -22,6 +24,13 @@ class _DiceAppState extends State<DiceApp> {
   int LDiceNumber = 1;
   int RDiceNumber = 1;
 
+  void onPressedd() {
+    setState(() {
+      RDiceNumber = Random().nextInt(6) + 1;
+      LDiceNumber = Random().nextInt(6) + 1;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -30,10 +39,7 @@ class _DiceAppState extends State<DiceApp> {
           Expanded(
             child: FlatButton(
               onPressed: () {
-                setState(() {
-                  LDiceNumber = Random().nextInt(6) + 1;
-                  RDiceNumber = Random().nextInt(6) + 1;
-                });
+                onPressedd();
               },
               child: Image(
                 image: AssetImage('images/dice$LDiceNumber.png'),
@@ -43,10 +49,7 @@ class _DiceAppState extends State<DiceApp> {
           Expanded(
             child: FlatButton(
               onPressed: () {
-                setState(() {
-                  RDiceNumber = Random().nextInt(6) + 1;
-                  LDiceNumber = Random().nextInt(6) + 1;
-                });
+                onPressedd();
               },
               child: Image(
                 image: AssetImage('images/dice$RDiceNumber.png'),
