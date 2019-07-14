@@ -4,9 +4,9 @@ import 'dart:math';
 void main() {
   return runApp(MaterialApp(
       home: Scaffold(
-    backgroundColor: Colors.red,
+    backgroundColor: Colors.teal,
     appBar: AppBar(
-      backgroundColor: Colors.red,
+      backgroundColor: Colors.teal,
       title: Text('Dice Rolling'),
     ),
     body: DiceApp(),
